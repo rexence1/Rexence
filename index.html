@@ -1447,11 +1447,11 @@
       }
 
       .faq-icon {
-        transition: transform 0.3s ease;
         font-size: 1.5rem;
         color: var(--accent);
+        transition: transform 0.2s ease-out !important;
       }
-
+      
       .faq-item.active .faq-icon {
         transform: rotate(45deg);
       }
@@ -1459,7 +1459,8 @@
       .faq-answer {
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.3s ease;
+        /* Lowered to 0.2s, changed to ease-out for that snappy feel */
+        transition: max-height 0.2s ease-out !important; 
       }
 
       .faq-answer-content {
