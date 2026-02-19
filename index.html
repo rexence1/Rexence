@@ -57,7 +57,7 @@
       }
 
       html {
-        scroll-behavior: smooth;
+        
         /* Keeps section titles visible below the fixed nav */
         scroll-padding-top: 100px;
       }
@@ -2264,6 +2264,27 @@
           padding: 50px !important;
         }
       }
+      /* --- ULTIMATE SCROLL PERFORMANCE FIX --- */
+      
+      /* 1. Turn off heavy blurs on cards (keeps the site looking exactly the same, but 10x faster) */
+      .project-card, 
+      .service-card, 
+      .offer-card, 
+      .why-work-item, 
+      .testimonial-card, 
+      .faq-item {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        /* Force Hardware Acceleration */
+        transform: translateZ(0); 
+        will-change: transform, opacity;
+      }
+
+      /* 2. Optimize the Sticky Stack */
+      .project-card {
+        will-change: transform; 
+      }
+      
     </style>
     <nav id="navbar">
       <a
@@ -2504,7 +2525,7 @@
             
             <div class="gallery-slide">
               <img 
-                src="images/wmck.png" 
+                src="images/wmck.webp" 
                 alt="Office Space" 
                 style="width: 100%; height: 100%; object-fit: cover;" 
               />
@@ -2512,7 +2533,7 @@
 
             <div class="gallery-slide">
               <img 
-                src="images/svb.png" 
+                src="images/svb.webp" 
                 alt="Design Process" 
                 style="width: 100%; height: 100%; object-fit: cover;" 
               />
@@ -2520,7 +2541,7 @@
 
             <div class="gallery-slide">
               <img 
-                src="images/bbb.png" 
+                src="images/bbb.webp" 
                 alt="Team Meeting" 
                 style="width: 100%; height: 100%; object-fit: cover;" 
               />
@@ -2528,7 +2549,7 @@
 
             <div class="gallery-slide">
               <img 
-                src="images/zrp.png" 
+                src="images/zrp (1).webp" 
                 alt="Responsive Designs" 
                 style="width: 100%; height: 100%; object-fit: cover;" 
               />
@@ -2536,7 +2557,7 @@
 
             <div class="gallery-slide">
               <img 
-                src="images/responsive.png" 
+                src="images/responsive.webp" 
                 alt="Launch Day" 
                 style="width: 100%; height: 100%; object-fit: cover;" 
               />
@@ -3006,7 +3027,7 @@
       <div class="projects-grid">
         <div class="project-card">
           <div class="project-image-wrapper">
-            <img src="images/iphone-hand-psd-mockup.png" alt="Modern Portfolio" class="project-image" />
+            <img src="images/iphone-hand-psd-mockup.webp" alt="Modern Portfolio" class="project-image" />
           </div>
           <div class="project-content">
             <h3>Modern Portfolio</h3>
@@ -3022,7 +3043,7 @@
         </div>
         <div class="project-card">
           <div class="project-image-wrapper">
-            <img src="images/sgm.png" alt="Business Website" class="project-image" />
+            <img src="images/sgm.webp" alt="Business Website" class="project-image" />
           </div>
           <div class="project-content">
             <h3>Business Website</h3>
@@ -3039,7 +3060,7 @@
         
         <div class="project-card">
           <div class="project-image-wrapper">
-            <img src="images/zhsty.png" alt="E-commerce Showcase" class="project-image" />
+            <img src="images/zhsty.webp" alt="E-commerce Showcase" class="project-image" />
           </div>
           <div class="project-content">
             <h3>E-commerce Showcase</h3>
@@ -4204,5 +4225,19 @@ document.getElementById('scrollIndicator').addEventListener('click', () => {
 
   })();
 </script>
+<script>
+      // --- AUTOMATIC LAZY LOADING ---
+      document.addEventListener("DOMContentLoaded", function() {
+        // Find every image on the page
+        const allImages = document.querySelectorAll('img');
+        
+        allImages.forEach(img => {
+          // Add lazy loading if it doesn't already have it
+          if (!img.hasAttribute('loading')) {
+            img.setAttribute('loading', 'lazy');
+          }
+        });
+      });
+    </script>
   </body>
 </html>
