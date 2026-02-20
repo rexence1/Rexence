@@ -1,8 +1,22 @@
 <html lang="en">
   <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YQJKMSQ783"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YQJKMSQ783');
+</script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    <title>Rexence | Premium Web Design & Development</title>
+
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <meta name="title" content="Rexence | Premium Web Design & Development">
     <meta name="description" content="Rexence is a premium web design agency crafting high-performance, custom websites that help individuals and businesses stand out online and maximize conversions.">
     <meta name="keywords" content="web development, web design, custom websites, website, frontend development, UI/UX design, website maintenance, e-commerce websites, Rexence">
@@ -29,28 +43,78 @@
     <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
     <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
     <script src="/_sdk/element_sdk.js"></script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Rexence",
-      "image": "https://rexence.online/rexence.png",
-      "description": "Premium web design agency crafting high-performance websites for individuals and businesses worldwide.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "NG"
-      },
-      "areaServed": "Worldwide",
-      "telephone": "+2348111761698",
-      "email": "info.rexence@gmail.com",
-      "url": "https://rexence.online/"
-    }
-    </script>
+    
   </head> 
   
-  <body> <img class="project-image" src="./your-image-name.jpg" alt="Project Name" style="display: none;" />
+  <body> 
+    <img class="project-image" src="./your-image-name.jpg" alt="Project Name" style="display: none;" />
+  <body> 
+    <div class="intro-curtain">
+      <div class="intro-logo">Rexence<span style="color: #ffffff;">.</span></div>
+    </div>
+    
+    <img class="project-image" src="./your-image-name.jpg" alt="Project Name" style="display: none;" />
     
     <style>
+      /* --- INTRO CURTAIN REVEAL (CSS) --- */
+      .intro-curtain {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #0a0a0a; 
+        z-index: 99999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: curtainUp 0.8s cubic-bezier(0.77, 0, 0.175, 1) 1.2s forwards;
+        pointer-events: none; 
+      }
+
+      .intro-logo {
+        font-size: 3rem;
+        font-weight: 800;
+        color: #4ade80;
+        letter-spacing: -1.5px;
+        opacity: 0;
+        animation: logoPulse 1.2s ease-in-out forwards;
+        font-family: sans-serif;
+      }
+
+      @keyframes curtainUp {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-100vh); visibility: hidden; }
+      }
+
+      @keyframes logoPulse {
+        0% { opacity: 0; transform: scale(0.95) translateY(10px); }
+        40% { opacity: 1; transform: scale(1) translateY(0); }
+        80% { opacity: 1; transform: scale(1) translateY(0); }
+        100% { opacity: 0; transform: scale(1.05) translateY(-10px); }
+      }
+
+      /* --- YOUR EXISTING CSS STARTS HERE --- */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --bg-primary: #ffffff;
+        --bg-secondary: #f3f3f3;
+        --text-primary: #181818;
+        --text-secondary: #6b7280;
+        --accent: #2d6e3b;
+        --accent-hover: #245c31;
+        --neon-accent: #4ade80;
+        --border: #e5e7eb;
+        --shadow: rgba(45, 110, 59, 0.12);
+        --shadow-hover: rgba(45, 110, 59, 0.25);
+        --accent-light: #e8f5e9;
+      }  
+      
       * {
         margin: 0;
 /* ... the rest of your CSS continues here ... */
@@ -99,9 +163,7 @@
       }
 
       body {
-        font-family:
-          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
-          Cantarell, sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
         background: var(--bg-primary);
         color: var(--text-primary);
         line-height: 1.6;
@@ -111,6 +173,31 @@
           color 0.3s ease;
         box-sizing: border-box;
       }
+
+      /* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+    
+      /* Custom Highlight Color */
+::selection {
+  background-color: var(--neon-accent);
+  color: #000000;
+}
+::-moz-selection {
+  background-color: var(--neon-accent);
+  color: #000000;
+}
 
       /* Navigation */
       nav {
